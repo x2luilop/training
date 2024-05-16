@@ -2,7 +2,7 @@
 
 ### Setup
 
-Connect to MySQL and run the app.sql in your SQL editor.
+Create the training database in MySQL.
 ```bash
 mysql -u root -p < app.sql
 ```
