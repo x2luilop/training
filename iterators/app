@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/setup.php';
+
+$dir = new RecursiveDirectoryIterator($basePath, RecursiveDirectoryIterator::SKIP_DOTS);
+
+$it = new RecursiveIteratorIterator($dir);
+
+foreach ($it as $fileinfo) {
+
+    // $fileinfo is an instance of SplFileInfo
+    // https://www.php.net/manual/en/class.splfileinfo.php
+
+    echo 'File: ', $fileinfo->getFilename(), PHP_EOL;
+    echo ' - File Path: ', $fileinfo->getRealPath(), PHP_EOL;
+    echo ' - Folder Path: ', $fileinfo->getPath(), PHP_EOL;
+    echo ' - Extension: ', $fileinfo->getExtension(), PHP_EOL;
+    echo ' - Size: ', $fileinfo->getSize(), PHP_EOL;
+    echo ' - Modified Time: ', $fileinfo->getMTime(), PHP_EOL;
+    echo PHP_EOL;
+}
